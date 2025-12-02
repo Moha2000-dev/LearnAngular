@@ -34,6 +34,11 @@ export class Day2 implements OnInit {
   user: Usersinterface[] = [];
   products: Productinterface[] = [];
   names: string[] = ['mohammed', 'ali', 'omar'];
+  discountedProducts: { name: string; originalPrice: number; discountedPrice: number }[] = [];
+
+  numbers: number[] = [10, 25, 30, 45];
+  over20: number[] = [];
+  foundProductName: string | null = null;
 
   constructor(private userservices: Users, private productsService: ProductsService) {}
 
@@ -66,5 +71,16 @@ export class Day2 implements OnInit {
     this.names.forEach(name => {
       console.log(name);
     });
+
+    this.discountedProducts = this.products.map(p => ({
+      name: p.name,
+      originalPrice: p.price,
+      discountedPrice: p.price * 0.9,
+    }));
+
+    this.over20 = this.numbers.filter(n => n > 20);
+
+    const found = this.products.find(p => p.id === 2);
+    this.foundProductName = found ? found.name : null;
   }
 }
