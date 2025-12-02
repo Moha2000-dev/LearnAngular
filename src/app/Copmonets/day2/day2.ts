@@ -63,5 +63,15 @@ export class Day2 implements OnInit {
     this.user = this.userservices.getUsers();
 
     this.products = this.productsService.getAllProducts();
+
+    //create an array of names {mohammed ,ali ,omar} and display 
+  const names: string[] = ['mohammed', 'ali', 'omar'];
+  names.forEach(name => {
+    console.log(name);
+  });
+  
   }
-}
+  
+
+  }
+

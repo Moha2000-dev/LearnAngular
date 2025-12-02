@@ -12,3 +12,4 @@ import { Day2 } from './Copmonets/day2/day2';
 export class App {
   protected readonly title = signal('LearnAngular');
 }
+
