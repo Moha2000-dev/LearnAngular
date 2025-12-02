@@ -1,74 +1,143 @@
-<div class="grid gap-6 md:grid-cols-2">
-  <div class="bg-white p-4 rounded-xl shadow-lg space-y-2">
-    <h5 class="font-semibold text-gray-800 mb-1">Example 1: User List</h5>
-    <ul class="text-gray-700">
-      <li *ngFor="let user of user">{{ user.id }} - {{ user.name }} ({{ user.emil }})</li>
-    </ul>
+<section class="min-h-screen bg-gray-100 p-6 md:p-10">
+  <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-8">
+    <!--  Day 2 -->
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+      Day 2 - TypeScript & JavaScript Array Methods
+    </h2>
+
+    <!-- Row 1 -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Example 1 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 1: User List</h5>
+        <ul class="text-gray-800 text-sm list-disc list-inside">
+          <li *ngFor="let user of user">
+            {{ user.id }} - {{ user.name }}
+            <span class="text-gray-500">({{ user.emil }})</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Example 2 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 2: Product List</h5>
+        <ul class="text-gray-800 text-sm list-disc list-inside">
+          <li *ngFor="let product of products">
+            {{ product.id }} - {{ product.name }}
+            -
+            <span class="font-semibold text-gray-900"> {{ product.price }} OMR </span>
+            <span *ngIf="product.inStock" class="text-green-600"> (In stock) </span>
+            <span *ngIf="!product.inStock" class="text-red-500"> (Out of stock) </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Example 3 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 3: User Names List</h5>
+        <ul class="text-gray-800 text-sm list-disc list-inside">
+          <li *ngFor="let name of names">
+            {{ name }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Example 4 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 4: Discounted Product Prices</h5>
+        <ul class="text-gray-800 text-sm list-disc list-inside">
+          <li *ngFor="let item of discountedProducts">
+            {{ item.name }} -
+            <span class="font-semibold text-gray-600">Original:</span>
+            {{ item.originalPrice }} OMR -
+            <span class="font-semibold text-gray-600">After 10%:</span>
+            {{ item.discountedPrice | number : '1.2-2' }} OMR
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Example 5 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 5: filter() Numbers &gt; 20</h5>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Numbers:</span>
+          {{ numbers.join(', ') }}
+        </p>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Result (over 20):</span>
+          {{ over20.join(', ') }}
+        </p>
+      </div>
+
+      <!-- Example 6 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 6: find() Product with ID = 2</h5>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Found product:</span>
+          <span *ngIf="foundProductName; else notFound" class="text-gray-900">
+            {{ foundProductName }}
+          </span>
+          <ng-template #notFound>
+            <span class="text-red-500">No product found.</span>
+          </ng-template>
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Example 7 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 7: reduce() Total Prices</h5>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Prices:</span>
+          {{ prices.join(', ') }}
+        </p>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Total:</span>
+          {{ totalPrice }} OMR
+        </p>
+      </div>
+
+      <!-- Example 8 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 8: sort() Names</h5>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Original:</span>
+          {{ sortNamesOriginal.join(', ') }}
+        </p>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Sorted:</span>
+          {{ sortNamesSorted.join(', ') }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Example 9 -->
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
+        <h5 class="font-semibold text-pink-600 mb-1">Example 9: some() &amp; every() on Marks</h5>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">Marks:</span>
+          {{ marks.join(', ') }}
+        </p>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">every(m &gt;= 50):</span>
+          {{ allPassed }}
+        </p>
+        <p class="text-gray-800 text-sm">
+          <span class="font-semibold text-gray-700">some(m &gt; 90):</span>
+          {{ hasHighMark }}
+        </p>
+      </div>
+
+    </div>
   </div>
-
-  <div class="bg-white p-4 rounded-xl shadow-lg space-y-2">
-    <h5 class="font-semibold text-gray-800 mb-1">Example 2: Product List</h5>
-    <ul class="text-gray-700">
-      <li *ngFor="let product of products">
-        {{ product.id }} - {{ product.name }} - {{ product.price }} OMR
-        <span *ngIf="product.inStock"> (In stock)</span>
-        <span *ngIf="!product.inStock"> (Out of stock)</span>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 3: User Names List</h5>
-  <ul class="text-gray-700">
-    <li *ngFor="let name of names">
-      {{ name }}
-    </li>
-  </ul>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 4: Discounted Product Prices</h5>
-  <ul class="text-gray-700">
-    <li *ngFor="let item of discountedProducts">
-      {{ item.name }} - Original: {{ item.originalPrice }} OMR - After 10% discount:
-      {{ item.discountedPrice | number : '1.2-2' }} OMR
-    </li>
-  </ul>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 5: filter() Numbers &gt; 20</h5>
-  <p class="text-gray-700 mb-1">Numbers: {{ numbers.join(', ') }}</p>
-  <p class="text-gray-700">Result (over 20): {{ over20.join(', ') }}</p>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 6: find() Product with ID = 2</h5>
-  <p class="text-gray-700">
-    Found product:
-    <span *ngIf="foundProductName; else notFound">
-      {{ foundProductName }}
-    </span>
-    <ng-template #notFound> No product found. </ng-template>
-  </p>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 7: reduce() Total Prices</h5>
-  <p class="text-gray-700 mb-1">Prices: {{ prices.join(', ') }}</p>
-  <p class="text-gray-700">Total: {{ totalPrice }} OMR</p>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 8: sort() Names</h5>
-  <p class="text-gray-700 mb-1">Original: {{ sortNamesOriginal.join(', ') }}</p>
-  <p class="text-gray-700">Sorted: {{ sortNamesSorted.join(', ') }}</p>
-</div>
-
-<div class="bg-white p-4 rounded-xl shadow-lg mt-4">
-  <h5 class="font-semibold text-gray-800 mb-1">Example 9: some() &amp; every() on Marks</h5>
-  <p class="text-gray-700 mb-1">Marks: {{ marks.join(', ') }}</p>
-  <p class="text-gray-700">every(m &gt;= 50): {{ allPassed }}</p>
-  <p class="text-gray-700">some(m &gt; 90): {{ hasHighMark }}</p>
-</div>
+</section>
