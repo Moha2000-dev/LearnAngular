@@ -1,7 +1,6 @@
-type Role = 'Admin' | 'User' | 'Guest';
-
-interface AppUser {
-  name: string;
-  role: Role;
-  active: boolean;
+// src/app/shared/userInterface/role.models.ts
+export enum Role {
+  Admin = 'Admin',
+  User = 'User',
+  Guest = 'Guest',
 }
