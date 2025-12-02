@@ -1,14 +1,18 @@
-<section class="min-h-screen bg-gray-100 p-6 md:p-10">
-  <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-8">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
-      Day 3 - ngClass, ngStyle, ngIf &amp; Dynamic Dashboard
-    </h2>
+<div class="bg-white p-4 md:p-6 space-y-6 rounded-xl shadow-lg">
+  <h2 class="text-2xl md:text-3xl font-bold">
+    Day 3 - ngClass, ngStyle, ngIf &amp; Dynamic Dashboard
+  </h2>
+
+  <!-- ============ Section 1: Users & Roles ============ -->
+  <section class="space-y-3">
+    <h3 class="text-xl font-semibold text-fuchsia-700">
+      Example 1:
+      <span class="text-rose-600">Active Admin</span> &amp; Users Styling
+      <span class="text-sm text-gray-500">(ngClass, ngStyle, ngIf)</span>
+    </h3>
 
     <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-4">
-      <h3 class="font-semibold text-pink-600">
-        Example 1: Active Admin &amp; Users Styling (ngClass + ngStyle + ngIf)
-      </h3>
-
+      <!-- Filter buttons -->
       <div class="flex flex-wrap gap-2 text-xs items-center">
         <span class="text-gray-700 font-semibold mr-1">Filter:</span>
 
@@ -57,6 +61,7 @@
         </button>
       </div>
 
+      <!-- Users list -->
       <div *ngIf="filteredUsers.length > 0; else noUsers">
         <ul class="space-y-2 text-sm">
           <li
@@ -117,10 +122,16 @@
         <p class="text-sm text-gray-500 italic">No users for this filter. Try another role.</p>
       </ng-template>
     </div>
+  </section>
+
+  <!-- ============ Section 2: Dynamic Task Dashboard ============ -->
+  <section class="space-y-3">
+    <h3 class="text-xl font-semibold text-fuchsia-700">
+      Example 2:
+      <span class="text-rose-600">Dynamic Task Dashboard</span>
+    </h3>
 
     <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-4">
-      <h3 class="font-semibold text-pink-600">Example 2: Dynamic Task Dashboard</h3>
-
       <div *ngIf="tasks.length > 0; else noTasks" class="space-y-3">
         <div
           *ngFor="let task of tasks"
@@ -210,5 +221,5 @@
         <p class="text-sm text-gray-500 italic">No tasks found. Add a new task to get started.</p>
       </ng-template>
     </div>
-  </div>
-</section>
+  </section>
+</div>
