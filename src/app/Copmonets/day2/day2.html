@@ -1,0 +1,26 @@
+<!-- حاوية عامة للكروت -->
+<div class="grid gap-6 md:grid-cols-2">
+  <!-- Card 1: User List -->
+  <div class="bg-white p-4 rounded-xl shadow-lg space-y-2">
+    <h5 class="font-semibold text-gray-800 mb-1">Example 1: User List</h5>
+
+    <ul class="text-gray-700">
+      <li *ngFor="let user of user">
+        {{ user.id }} - {{ user.name }} ({{ user.emil }})
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 2: Product List -->
+  <div class="bg-white p-4 rounded-xl shadow-lg space-y-2">
+    <h5 class="font-semibold text-gray-800 mb-1">Example 2: Product List</h5>
+
+    <ul class="text-gray-700">
+      <li *ngFor="let product of products">
+        {{ product.id }} - {{ product.name }} - {{ product.price }} OMR
+        <span *ngIf="product.inStock"> (In stock)</span>
+        <span *ngIf="!product.inStock"> (Out of stock)</span>
+      </li>
+    </ul>
+  </div>
+</div>
