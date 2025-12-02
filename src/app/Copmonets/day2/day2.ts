@@ -40,6 +40,16 @@ export class Day2 implements OnInit {
   over20: number[] = [];
   foundProductName: string | null = null;
 
+  prices: number[] = [50, 100, 150];
+  totalPrice: number = 0;
+
+  sortNamesOriginal: string[] = ['Zainab', 'Ali', 'Huda'];
+  sortNamesSorted: string[] = [];
+
+  marks: number[] = [80, 90, 70];
+  allPassed: boolean = false;
+  hasHighMark: boolean = false;
+
   constructor(private userservices: Users, private productsService: ProductsService) {}
 
   ngOnInit(): void {
@@ -82,5 +92,12 @@ export class Day2 implements OnInit {
 
     const found = this.products.find(p => p.id === 2);
     this.foundProductName = found ? found.name : null;
+
+    this.totalPrice = this.prices.reduce((sum, p) => sum + p, 0);
+
+    this.sortNamesSorted = [...this.sortNamesOriginal].sort();
+
+    this.allPassed = this.marks.every(m => m >= 50);
+    this.hasHighMark = this.marks.some(m => m > 90);
   }
 }
