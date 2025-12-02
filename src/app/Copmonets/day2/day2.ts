@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Users } from './services/users';
 import { Usersinterface } from '../../shared/userInterface/user.models';
-
 import { ProductsService } from './services/product';
 import { Productinterface } from '../../shared/userInterface/product.models';
 
@@ -32,10 +31,11 @@ const userDeatails: UserInterface = {
   styleUrl: './day2.css',
 })
 export class Day2 implements OnInit {
-  constructor(private userservices: Users, private productsService: ProductsService) {}
-
   user: Usersinterface[] = [];
   products: Productinterface[] = [];
+  names: string[] = ['mohammed', 'ali', 'omar'];
+
+  constructor(private userservices: Users, private productsService: ProductsService) {}
 
   ngOnInit(): void {
     let fristname: string = 'mohammed';
@@ -61,17 +61,10 @@ export class Day2 implements OnInit {
     console.log();
 
     this.user = this.userservices.getUsers();
-
     this.products = this.productsService.getAllProducts();
 
-    //create an array of names {mohammed ,ali ,omar} and display 
-  const names: string[] = ['mohammed', 'ali', 'omar'];
-  names.forEach(name => {
-    console.log(name);
-  });
-  
+    this.names.forEach(name => {
+      console.log(name);
+    });
   }
-  
-
-  }
-
+}
