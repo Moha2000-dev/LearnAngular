@@ -1,43 +1,57 @@
-<div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 space-y-12">
-  <h2 class="text-2xl font-bold text-gray-900">Day 4 Data Binding</h2>
+<div class="bg-white p-8 rounded-xl shadow-lg border border-indigo-100 space-y-12">
+  <h2 class="text-2xl font-bold text-indigo-700">Day 4 Data Binding</h2>
 
+  <!-- Property Binding -->
   <section class="space-y-6">
-    <h3 class="text-2xl font-semibold text-rose-800">Property Binding</h3>
-    <p class="text-gray-700">
+    <h3 class="text-2xl font-semibold text-emerald-700">Property Binding</h3>
+    <p class="text-slate-700">
       Property binding creates a one-way data flow –
-      <strong>from the component (TypeScript) to the view (HTML).</strong>
+      <strong class="text-emerald-700">from the component (TypeScript) to the view (HTML).</strong>
     </p>
-  
+
     <div class="flex justify-center">
       <div class="flex justify-center" [class]="photoPadding">
-        <img [src]="photoPath2" alt="photo2" class="w-96 rounded-lg shadow-md" />
+        <img
+          [src]="photoPath2"
+          alt="photo2"
+          class="w-96 rounded-lg shadow-md border border-indigo-100"
+        />
       </div>
     </div>
 
-    <h4 class="text-xl font-semibold text-gray-800 mt-4">Examples</h4>
-    <div class="bg-gray-50 p-6 rounded-lg border space-y-5">
+    <h4 class="text-xl font-semibold text-slate-900 mt-4">Examples</h4>
+    <div
+      class="bg-gradient-to-br from-indigo-50 via-sky-50 to-emerald-50 p-6 rounded-lg border border-indigo-100 space-y-5"
+    >
       <div>
-        <p class="font-medium text-gray-900">Interpolation: Hi {{ userName }}</p>
+        <p class="font-medium text-slate-900">
+          Interpolation:
+          <span class="text-indigo-700">Hi {{ userName }}</span>
+        </p>
       </div>
 
       <div>
-        <p class="font-medium text-gray-900">Property Binding (Input Value):</p>
+        <p class="font-medium text-slate-900">Property Binding (Input Value):</p>
         <input
-          class="mt-2 border rounded px-3 py-2 w-full"
+          class="mt-2 border border-indigo-200 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-400"
           [placeholder]="inputPlaceholder"
           [value]="inputValue"
         />
       </div>
 
       <div>
-        <p class="font-medium text-gray-900">Property Binding (Image):</p>
-        <img class="mt-2 w-64 rounded-lg shadow-md" [src]="photoPath1" [alt]="photoAlt" />
+        <p class="font-medium text-slate-900">Property Binding (Image):</p>
+        <img
+          class="mt-2 w-64 rounded-lg shadow-md border border-emerald-100"
+          [src]="photoPath1"
+          [alt]="photoAlt"
+        />
       </div>
 
       <div>
-        <p class="font-medium text-gray-900">Property Binding (Disabled Button):</p>
+        <p class="font-medium text-slate-900">Property Binding (Disabled Button):</p>
         <button
-          class="mt-2 px-4 py-2 rounded-lg bg-gray-400 text-white font-semibold"
+          class="mt-2 px-4 py-2 rounded-lg bg-slate-400 text-white font-semibold cursor-not-allowed"
           [disabled]="isSaving"
         >
           {{ isSaving ? 'Saving...' : 'Save' }}
@@ -45,19 +59,23 @@
       </div>
     </div>
   </section>
+
+  <!-- Event Binding -->
   <section class="space-y-6">
-    <h3 class="text-2xl font-semibold text-rose-800">Event Binding</h3>
-    <p class="text-gray-700">
+    <h3 class="text-2xl font-semibold text-sky-700">Event Binding</h3>
+    <p class="text-slate-700">
       Event binding creates a one-way data flow –
-      <strong>from the view (HTML) to the component (TypeScript).</strong>
+      <strong class="text-sky-700">from the view (HTML) to the component (TypeScript).</strong>
     </p>
 
-    <h4 class="text-xl font-semibold text-gray-800 mt-4">Examples</h4>
-    <div class="bg-gray-50 p-6 rounded-lg border space-y-5">
+    <h4 class="text-xl font-semibold text-slate-900 mt-4">Examples</h4>
+    <div
+      class="bg-gradient-to-br from-sky-50 via-indigo-50 to-emerald-50 p-6 rounded-lg border border-sky-100 space-y-5"
+    >
       <div>
-        <p class="font-medium text-gray-900">Button Click Event:</p>
+        <p class="font-medium text-slate-900">Button Click Event:</p>
         <button
-          class="mt-2 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+          class="mt-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold"
           (click)="onButtonClick()"
         >
           Click Me
@@ -65,27 +83,31 @@
       </div>
 
       <div>
-        <p class="font-medium text-gray-900">Input Keyup Event:</p>
+        <p class="font-medium text-slate-900">Input Keyup Event:</p>
         <input
-          class="mt-2 border rounded px-3 py-2 w-full"
+          class="mt-2 border border-sky-200 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-sky-400"
           placeholder="Type something..."
           (keyup)="onInputKeyup($event)"
         />
       </div>
 
       <div>
-        <p class="font-medium text-gray-900">Click Me Counter: {{ counter }}</p>
+        <p class="font-medium text-slate-900">
+          Click Me Counter:
+          <span class="text-emerald-700 font-semibold">{{ counter }}</span>
+        </p>
         <button
-          class="mt-2 px-4 py-2 rounded-lg bg-green-600 text-white font-semibold"
+          class="mt-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 transition text-white font-semibold"
           (click)="onClickMe()"
         >
           Click Me
         </button>
       </div>
+
       <div>
-        <p class="font-medium text-gray-900">Conditional Login Button:</p>
+        <p class="font-medium text-slate-900">Conditional Login Button:</p>
         <button
-          class="mt-2 px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold"
+          class="mt-2 px-4 py-2 rounded-lg bg-fuchsia-600 hover:bg-fuchsia-700 transition text-white font-semibold"
           (click)="toggleLogin()"
         >
           {{ isLoggedIn ? 'Logout' : 'Login' }}
