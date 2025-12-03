@@ -1,15 +1,54 @@
-<div class="bg-white p-8 rounded-2xl shadow-lg">
-<h2 class="text-2xl md:text-3xl font-bold text-gray-900">
-    Day 4  Data Binding 
-</h2>
+<div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 space-y-12">
+  <!-- Title -->
+  <h2 class="text-2xl font-bold text-gray-900">Day 4 Data Binding</h2>
 
+  <!-- Property Binding -->
+  <section class="space-y-6">
+    <h3 class="text-2xl font-semibold text-rose-800">Property Binding</h3>
+    <p class="text-gray-700">
+      Property binding creates a one-way data flow –
+      <strong>from the component (TypeScript) to the view (HTML).</strong>
+    </p>
 
-<section>
+    <div class="flex justify-center">
+      <div class="flex justify-center">
+        <img
+          [src]="photoPath2"
+          [class]="photoPadding"
+          class="rounded-lg border border-gray-300 shadow-sm max-w-full h-auto"
+        />
+      </div>
+    </div>
 
+    <!-- Examples -->
+    <h4 class="text-xl font-semibold text-gray-800 mt-4">Examples</h4>
+    <div class="bg-gray-50 p-6 rounded-lg border space-y-5">
+      <!-- Interpolation -->
+      <div>
+        <p class="font-medium text-gray-900">Interpolation:</p>
+        <p class="text-gray-700"></p>
+      </div>
 
+      <!-- Input Binding -->
+      <div>
+        <p class="font-medium text-gray-900">Property Binding (Input Value):</p>
+        <!-- input -->
+        <p class="mt-1 text-gray-700"></p>
+      </div>
 
+      <!-- Image Binding -->
+      <div>
+        <p class="font-medium text-gray-900">Property Binding (Image):</p>
+        <!-- image -->
+        <p class="mt-1 text-gray-700"></p>
+      </div>
 
-    
-</section>
+      <!-- Disabled Button -->
+      <div>
+        <p class="font-medium text-gray-900">Property Binding (Disabled Button):</p>
+        <!-- disabled button -->
+        <p class="mt-1 text-gray-700"></p>
+      </div>
+    </div>
+  </section>
 </div>
-
