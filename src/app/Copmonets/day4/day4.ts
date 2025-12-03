@@ -54,4 +54,6 @@ export class Day4 {
   toggleLogin(): void {
     this.isLoggedIn = !this.isLoggedIn;
   }
+ 
+ 
 }
