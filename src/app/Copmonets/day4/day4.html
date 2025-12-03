@@ -45,4 +45,53 @@
       </div>
     </div>
   </section>
+  <section class="space-y-6">
+    <h3 class="text-2xl font-semibold text-rose-800">Event Binding</h3>
+    <p class="text-gray-700">
+      Event binding creates a one-way data flow –
+      <strong>from the view (HTML) to the component (TypeScript).</strong>
+    </p>
+
+    <h4 class="text-xl font-semibold text-gray-800 mt-4">Examples</h4>
+    <div class="bg-gray-50 p-6 rounded-lg border space-y-5">
+      <div>
+        <p class="font-medium text-gray-900">Button Click Event:</p>
+        <button
+          class="mt-2 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+          (click)="onButtonClick()"
+        >
+          Click Me
+
+        </button>
+      </div>
+
+      <div>
+        <p class="font-medium text-gray-900">Input Keyup Event:</p>
+        <input
+          class="mt-2 border rounded px-3 py-2 w-full"
+          placeholder="Type something..."
+          (keyup)="onInputKeyup($event)"
+        />
+      </div>
+
+      <div>
+        <p class="font-medium text-gray-900">Click Me Counter: {{ counter }}</p>
+        <button
+          class="mt-2 px-4 py-2 rounded-lg bg-green-600 text-white font-semibold"
+          (click)="onClickMe()"
+        >
+          Click Me
+        </button>
+      </div>
+      <div>
+        <p class="font-medium text-gray-900">Conditional Login Button:</p>
+        <button
+          class="mt-2 px-4 py-2 rounded-lg bg-purple-600 text-white font-semibold"
+          (click)="toggleLogin()"
+        >
+          {{ isLoggedIn ? 'Logout' : 'Login' }}
+        </button> 
+      </div>
+    </div>
+  </section>
 </div>
