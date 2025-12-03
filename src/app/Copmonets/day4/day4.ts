@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-day4',
+  standalone: true,
   imports: [],
   templateUrl: './day4.html',
   styleUrl: './day4.css',
@@ -11,7 +12,22 @@ export class Day4 {
   photoPadding: string = 'p-4';
 
   // photo path
-  photoPath2: string = 'https://media.calibraint.com/calibraint-wordpress/wp-content/uploads/2023/07/31125642/Interpolation-Snippet-Calibraint-1536x698.jpg';
+  photoPath2: string =
+    'https://media.calibraint.com/calibraint-wordpress/wp-content/uploads/2023/07/31125914/Event-Binding-Snippet-Calibraint-1024x465.jpg';
+// photo path
+  photoPath1: string = 'https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png';
+  // ===== Examples =====
 
-  
+  // Interpolation example
+  userName: string = 'Mohammed';
+
+  // Property binding (input value)
+  inputPlaceholder: string = 'Type your name here';
+  inputValue: string = 'Angular Student';
+
+  // Property binding (image)
+  photoAlt: string = 'https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png';
+
+  // Property binding (disabled button)
+  isSaving: boolean = true;
 }
