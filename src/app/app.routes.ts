@@ -4,6 +4,8 @@ import { Day2 } from './Copmonets/day2/day2';
 import { Day3 } from './Copmonets/day3/day3';
 import { Day4 } from './Copmonets/day4/day4';
 import { Day5 } from './Copmonets/day5/day5';
+import { PageNotFound } from './shared/page-not-found/page-not-found';
+
 
 export const routes: Routes = [
     {path: '', redirectTo: 'day1', pathMatch: 'full'},
@@ -12,5 +14,7 @@ export const routes: Routes = [
     {path:"day3",component:Day3},
     {path:"day4",component:Day4},
     {path:"day5",component:Day5},
+    {path: '404', component: PageNotFound},
+    {path: '**', redirectTo: '404' }
 
 ];

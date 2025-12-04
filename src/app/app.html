@@ -1,19 +1,16 @@
 <div class="min-h-screen bg-gray-200">
-  <header class="bg-gray-50 shadow-lg p-6 mb-10">
+  <header *ngIf="router.url !== '/404'" class="bg-gray-50 shadow-lg p-6 mb-10">
     <div class="flex justify-between items-center flex-wrap gap-4">
       <h1
         class="text-3xl font-bold bg-gradient-to-r from-rose-600 to-fuchsia-500 text-transparent bg-clip-text"
       >
         Angular Learning Demo
+        <app-navbar class="mt-6"></app-navbar>
       </h1>
     </div>
   </header>
 
   <main class="p-10">
-    <app-day1></app-day1>
+    <router-outlet></router-outlet>
   </main>
-  <app-day2 class="p-10"> </app-day2>
-  <app-day3 class="p-10"> </app-day3>
-  <app-day4 class="p-10"> </app-day4>
-  <app-day5 class="p-10"></app-day5>
 </div>
