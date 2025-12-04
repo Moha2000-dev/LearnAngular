@@ -12,11 +12,10 @@ export class Day4 {
   photoPadding: string = 'p-4';
 
   // photo path
-  photoPath2: string =
-    'https://media.calibraint.com/calibraint-wordpress/wp-content/uploads/2023/07/31125914/Event-Binding-Snippet-Calibraint-1024x465.jpg';
+  photoPath2: string = 'https://i.sstatic.net/t8CZc.png';
   // photo path
   photoPath1: string =
-    'https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png';
+    'https://www.citypng.com/public/uploads/preview/hd-man-user-illustration-icon-transparent-png-701751694974843ybexneueic.png';
   // ===== Examples =====
 
   // Interpolation example
@@ -54,6 +53,4 @@ export class Day4 {
   toggleLogin(): void {
     this.isLoggedIn = !this.isLoggedIn;
   }
- 
- 
 }

@@ -4,10 +4,11 @@ import { Day1 } from './Copmonets/day1/day1';
 import { Day2 } from './Copmonets/day2/day2';
 import { Day3 } from "./Copmonets/day3/day3";
 import { Day4 } from "./Copmonets/day4/day4";
+import { Day5 } from "./Copmonets/day5/day5";
 
 @Component({
   selector: 'app-root',
-  imports: [Day1, Day2, Day3, Day4],
+  imports: [Day1, Day2, Day3, Day4, Day5],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
